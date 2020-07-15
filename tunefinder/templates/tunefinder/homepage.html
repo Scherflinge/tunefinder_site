@@ -67,4 +67,15 @@ Select your audio to find that tune
 
 <script type="text/javascript" src="homepage.js" ></script>
 
+{% if songs %}
+	<ul>
+	{% for this_song in songs %}
+	<li> {{ this_song }} </li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p>No songs are available.</p>
+{% endif %}
+
+
 </html>

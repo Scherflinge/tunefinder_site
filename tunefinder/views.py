@@ -8,9 +8,12 @@ from django.http import HttpResponse
 # Create your views here.
 
 
-def index(request):
-    context = {}
-    return render(request, 'tunefinder/homepage.html', context)
+def homepage(request):
+    return render(request, 'tunefinder/homepage.html', {})
+
+
+def search(request):
+    return render(request, 'tunefinder/Search.html', {})
 
 
 def upload_file(request):
