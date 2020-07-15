@@ -1,16 +1,9 @@
+{% extends "tunefinder/base.html" %}
 {% load static %}
+
+{% block content %}
 <!Doctype html>
 <html>
-
-	<link rel="stylesheet" type="text/css" href="{% static 'tunefinder/styles.css' %}">
-
-<h1 id="main-head">
-	<a href="homepage.html">TuneFinder</a>
-	<div class="search">
-		<input type="Text" name="search" placeholder="Search" id="search">
-		<input type="Submit" name="Submit" placeholder="Submit">
-	</div>
-</h1>
 <br>
 <div class="input">
 	<h2>You searched</h2>
@@ -18,3 +11,4 @@
 </div>
 
 </html>
+{% endblock %}

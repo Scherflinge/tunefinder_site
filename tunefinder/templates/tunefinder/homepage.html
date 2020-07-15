@@ -1,20 +1,8 @@
+{% extends "tunefinder/base.html" %}
 {% load static %}
+
+{% block content %}
 <html>
-	<link rel="stylesheet" type="text/css" href="{% static 'tunefinder/styles.css' %}">
-
-<h1 id="main-head">
-<a href="{% url 'homepage' %}">TuneFinder</a>
-	<div class="search">
-<input type="Text"  name="search" placeholder="Search" id="search">
-<button type="button" onclick="myFunction()" placeholder="Submit">Submit</button>
-
-
-</div>
-</h1>
-	</style>
-
-
-
 <br>
 <div class="input">
 <h2 class="words">
@@ -25,7 +13,6 @@ Select your audio to find that tune
 </div>
 <br>
 <input type="file" accept= audio/WAV id="userfile"></input>
-<input type="Text" name="path display" placeholder="Find that tune"  id="find">
 <input type="Submit" name="Find that tune" placeholder="Find that tune">
 </div>
 
@@ -41,5 +28,5 @@ Select your audio to find that tune
 	<p>No songs are available.</p>
 {% endif %}
 
-
 </html>
+{% endblock %}

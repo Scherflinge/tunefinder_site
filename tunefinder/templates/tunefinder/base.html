@@ -1,0 +1,18 @@
+{% load static %}
+
+<html>
+	<link rel="stylesheet" type="text/css" href="{% static 'tunefinder/styles.css' %}">
+
+<h1 id="main-head">
+<a href="{% url 'homepage' %}">TuneFinder</a>
+	<div class="search">
+<input type="Text"  name="search" placeholder="Search" id="search">
+<a href="{% url 'Search' %}"><button type="button" onclick="myFunction()" placeholder="Submit">Submit</button></a>
+
+
+</div>
+</h1>
+{% block content %}
+<!--information stored inside-->
+{% endblock %}
+</html>

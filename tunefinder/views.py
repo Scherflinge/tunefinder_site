@@ -9,7 +9,7 @@ from django.http import HttpResponse
 
 
 def homepage(request):
-    return render(request, 'tunefinder/homepage.html', {})
+    return render(request, 'tunefinder/homepage.html', {'songs':['All Star', 'Wonder Wall', 'Beat it']})
 
 
 def search(request):
