@@ -1,6 +1,7 @@
 from django.http import HttpResponseRedirect
 from .upload_file import handle_uploaded_file
 from .forms import UploadFileForm
+from django.db.models import Q
 from django.shortcuts import render
 from django.views import generic
 from django.http import HttpResponse
@@ -14,6 +15,15 @@ def homepage(request):
 
 def search(request):
     return render(request, 'tunefinder/Search.html', {})
+
+def get_search(query=None)
+    queryset= []
+    queries = query.split(" ")
+    for q in queries:
+        Search = Tune.objects.filter(
+            Q(title_icontrains=q)
+            Q(body_Iconstrains=q)
+        ).distinct()
 
 
 def upload_file(request):
