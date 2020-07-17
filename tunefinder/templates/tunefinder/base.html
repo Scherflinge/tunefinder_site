@@ -6,12 +6,16 @@
 <h1 id="main-head">
 <a href="{% url 'homepage' %}">TuneFinder</a>
 	<div class="search">
-<input type="Text" method="GET" name="search" placeholder="Search" id="search">
+	<form method="get">
+<input type="Text" method="GET" name="searchsomething" placeholder="Search" id="search">
 <a href="{% url 'Search' %}"><button type="button" onclick="myFunction()" placeholder="Submit">Submit</button></a>
-
+</form>
 
 </div>
 </h1>
+<script type ="text/javascript">
+	document.getElementById("search").value = "{{query}}"
+</script>
 {% block content %}
 <!--information stored inside-->
 {% endblock %}

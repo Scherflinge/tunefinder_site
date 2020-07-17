@@ -16,14 +16,14 @@ def homepage(request):
 def search(request):
     return render(request, 'tunefinder/Search.html', {})
 
-def get_search(query=None)
-    queryset= []
-    queries = query.split(" ")
-    for q in queries:
-        Search = Tune.objects.filter(
-            Q(title_icontrains=q)
-            Q(body_Iconstrains=q)
-        ).distinct()
+#def get_search(query=None)
+#    queryset= []
+ #   queries = query.split(" ")
+#    for q in queries:
+#        Search = Tune.objects.filter(
+#            Q(title_icontrains=q)
+#            Q(body_Iconstrains=q)
+#        ).distinct()
 
 
 def upload_file(request):
