@@ -16,6 +16,9 @@ def homepage(request):
 def search(request):
     return render(request, 'tunefinder/Search.html', {})
 
+def song(request):
+    return render(request, 'tunefinder/song.html', {})
+
 #def get_search(query=None)
 #    queryset= []
  #   queries = query.split(" ")
