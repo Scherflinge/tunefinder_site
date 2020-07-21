@@ -24,7 +24,15 @@ def search(request):
 #            Q(title_icontrains=q)
 #            Q(body_Iconstrains=q)
 #        ).distinct()
-
+# for find in Search 
+#       queryset.append(find)
+# return list(set(queryset))
+#
+#query =""
+#if request.GET:
+#    query= request.GET['search']
+#    context['query']= str(query)
+#
 
 def upload_file(request):
     if request.method == 'POST':
