@@ -5,9 +5,27 @@
 <!Doctype html>
 <html>
 <br>
-<div class="input">
-	<h2>We found</h2>
-</div>
 
+<div class="input">
+	<h2>We found the following audio: </h2>
+<audio controls>
+  <source src=" " type="audio/wav" id ="result">
+</audio>
+<script>
+var source = document.getElementById('result');
+source.src = "{% static 'tunefinder/images/piano2.wav' %}";
+</script>
+
+</div>
+<script>
+    const player = document.getElementById('player');
+    const file= "piano2.wav"
+    const url = URL.createObjectURL(file);
+    player.src = url;
+    var audio = new Audio('piano2.wav');
+    audio.play();
+    
+
+</script>
 </html>
 {% endblock %}

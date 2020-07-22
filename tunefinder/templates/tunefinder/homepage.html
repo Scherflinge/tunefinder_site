@@ -12,8 +12,10 @@ Select your audio to find that tune
 <input type="image" src="{% static 'tunefinder/images/spanish-listen-music.jpg' %}" alt="Person listening to music" width="900" height="380">
 </div>
 <br>
+<form action="homepage.php" method="POST">
 <input type="file" accept= audio/WAV id="userfile"></input>
 <a href="{% url 'song' %}"><button type="button" name="Find that tune" placeholder="Find that tune">Find song</a>
+</form>
 </div>
 
 <script type="text/javascript" src="homepage.js" ></script>
