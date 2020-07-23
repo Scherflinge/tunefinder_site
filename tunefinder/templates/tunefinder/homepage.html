@@ -20,6 +20,7 @@ Select your audio to find that tune
 
 <script type="text/javascript" src="homepage.js" ></script>
 
+{% comment %} 
 {% if songs %}
 	<ul>
 	{% for this_song in songs %}
@@ -29,6 +30,6 @@ Select your audio to find that tune
 {% else %}
 	<p>No songs are available.</p>
 {% endif %}
-
+{% endcomment %}
 </html>
 {% endblock %}
