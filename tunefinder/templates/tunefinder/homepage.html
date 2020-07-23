@@ -4,21 +4,23 @@
 {% block content %}
 <html>
 <br>
+<div style=background-image: src=" {% static 'tunefinder/images/BCC3BD1E-5DC0-4843-A841706AE575C694_source.jpg' %}">
 <div class="input">
 <h2 class="words">
 Select your audio to find that tune 
 </h2>
 <div class="picture">
-<input type="image" src="{% static 'tunefinder/images/spanish-listen-music.jpg' %}" alt="Person listening to music" width="900" height="380">
+<input type="image" class="image" src="{% static 'tunefinder/images/spanish-listen-music.jpg' %}" alt="Person listening to music" >
 </div>
 <br>
 <form action="homepage.php" method="POST">
 <input type="file" accept= audio/WAV id="userfile"></input>
-<a href="{% url 'song' %}"><button type="button" name="Find that tune" placeholder="Find that tune">Find song</a>
+<a href="{% url 'song' %}"><button class="buttonclass" type="button" name="Find that tune" placeholder="Find that tune">Find song</a>
 </form>
 </div>
+</div>
 
-<script type="text/javascript" src="homepage.js" ></script>
+{% comment %} <script type="text/javascript" src="homepage.js" ></script> {% endcomment %}
 
 {% comment %} 
 {% if songs %}
