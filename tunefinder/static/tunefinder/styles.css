@@ -7,6 +7,10 @@
     height: 380px;
     box-shadow: 0 0 20px 20px white inset;
 }
+.text{
+    font-size: 20px;
+    color: black;
+}
 
 .songclass {
     text-align: center;
@@ -27,12 +31,18 @@
 
 .words {
     text-align: center;
+    font-size: 40px ;
     padding: 10px;
 }
 
 .back {
-    background-image: url('images/BCC3BD1E-5DC0-4843-A841706AE575C694_source.jpg');
+    background-image: url('images/music.jpg');
     background-size: 100%;
+}
+.backsong {
+    background-image: url('images/music.jpg');
+    background-size: 100%;
+    height: 100%;
 }
 
 .picture {
@@ -41,7 +51,7 @@
 
 #banner {
     padding: 12em 0 10em 0;
-    background-image: url('images/BCC3BD1E-5DC0-4843-A841706AE575C694_source.jpg');
+    background-image: url('images/music.jpg');
     background-size: cover;
     background-position: top;
     background-attachment: fixed;

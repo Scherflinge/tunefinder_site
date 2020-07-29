@@ -1,22 +1,21 @@
+<div class="back">
 {% extends "tunefinder/base.html" %}
 {% load static %}
 
 {% block content %}
 <html>
 <br>
-<table>
-<td class="back">
 <body>
 <div class="input">
 <h2 class="words">
-Select your audio to find that tune 
+<u>Select your audio to find that tune</u> 
 </h2>
 <div class="picture">
 <input type="image" class="image" src="{% static 'tunefinder/images/spanish-listen-music.jpg' %}" alt="Person listening to music" >
 </div>
 <br>
 <form action="homepage.php" method="POST">
-<input type="file" accept= audio/WAV id="userfile"></input>
+<input type="file" class="text" accept= audio/WAV id="userfile"></input>
 <a href="{% url 'song' %}"><button class="buttonclass" type="button" name="Find that tune" placeholder="Find that tune">Find song</a>
 </form>
 </div>
@@ -37,6 +36,6 @@ Select your audio to find that tune
 	<p>No songs are available.</p>
 {% endif %}
 {% endcomment %}
-</table>
+
 </html>
 {% endblock %}
