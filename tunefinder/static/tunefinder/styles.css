@@ -29,7 +29,7 @@
     padding: 10px;
 }
 .back {
-    background-image: url('{{ STATIC_URL }}tunefinder/images/BCC3BD1E-5DC0-4843-A841706AE575C694_source.jpg');
+    background-image: url('{{ STATIC_URL }}tunefinder/images/water.jpg');
     background-size:100%;
 }
 .picture {
@@ -38,7 +38,7 @@
 }
 #banner {
     padding: 12em 0 10em 0;
-    background-image: url('tunefinder/static/BCC3BD1E-5DC0-4843-A841706AE575C694_source.jpg');
+    background-image: url('tunefinder/static/water.jpg');
     background-size: cover;
     background-position: top;
     background-attachment: fixed;
