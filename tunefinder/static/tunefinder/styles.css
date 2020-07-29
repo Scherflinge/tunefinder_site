@@ -1,9 +1,10 @@
 .input {
     text-align: center;
 }
-.image{
-    width:900px; 
-    height:380px;
+
+.image {
+    width: 900px;
+    height: 380px;
     box-shadow: 0 0 20px 20px white inset;
 }
 
@@ -12,12 +13,12 @@
     font-size: 20px;
 }
 
-.buttonclass:hover{
+.buttonclass:hover {
     border-radius: 12px;
     transition: all 0.5s;
     padding: 10px;
-  cursor: pointer;
-  margin: 5px;
+    cursor: pointer;
+    margin: 5px;
 }
 
 .search {
@@ -28,17 +29,19 @@
     text-align: center;
     padding: 10px;
 }
+
 .back {
-    background-image: url('{{ STATIC_URL }}tunefinder/images/BCC3BD1E-5DC0-4843-A841706AE575C694_source.jpg');
-    background-size:100%;
+    background-image: url('images/BCC3BD1E-5DC0-4843-A841706AE575C694_source.jpg');
+    background-size: 100%;
 }
+
 .picture {
     padding: 15px;
-
 }
+
 #banner {
     padding: 12em 0 10em 0;
-    background-image: url('tunefinder/static/BCC3BD1E-5DC0-4843-A841706AE575C694_source.jpg');
+    background-image: url('images/BCC3BD1E-5DC0-4843-A841706AE575C694_source.jpg');
     background-size: cover;
     background-position: top;
     background-attachment: fixed;
