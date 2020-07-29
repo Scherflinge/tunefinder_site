@@ -28,9 +28,23 @@
     text-align: center;
     padding: 10px;
 }
-
+.back {
+    background-image: url('{{ STATIC_URL }}tunefinder/images/BCC3BD1E-5DC0-4843-A841706AE575C694_source.jpg');
+    background-size:100%;
+}
 .picture {
     padding: 15px;
+
+}
+#banner {
+    padding: 12em 0 10em 0;
+    background-image: url('tunefinder/static/BCC3BD1E-5DC0-4843-A841706AE575C694_source.jpg');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+    border-top: 0.5em solid #5385c1;
 }
 
 #main-head {
