@@ -8,6 +8,7 @@ from django.views import generic
 from django.http import HttpResponse
 from datetime import datetime
 from django.urls import reverse
+from tunefinder.TuneFinder_PythonCode import TuneFinder
 # Create your views here.
 
 
@@ -19,12 +20,15 @@ def search(request):
     return render(request, 'tunefinder/Search.html', {})
 
 
-def song(request, added_context={}):
+def song(request, added_context=None):
     context = {}
-    if request.method == 'POST' and 'song_list' in request.POST:
-        if len(request.POST['song_list']) > 0:
-            context["song_list"] = [songInfo(x, y)
-                                    for (x, y) in request.POST['song_list']]
+    song_list = "song_list"
+    if added_context:
+        if added_context[song_list] and len(added_context[song_list]) > 0:
+            this_context = added_context[song_list]
+            print(this_context)
+            this_context = [songInfo(x, y) for (x, y) in this_context]
+            context[song_list] = this_context
 
     return render(request, 'tunefinder/song.html', context)
 
@@ -36,16 +40,22 @@ class songInfo:
 
 
 def upload_file(request):
-    print(os.name)
     if request.method == 'POST':
-        print("its post")
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
-            handle_uploaded_file(request.FILES['file'], str(1))
+            file_name = str(
+                (datetime.now() - datetime(1970, 1, 1)).total_seconds())+".wav"
+            file_path = os.path.join('media', file_name)
+            if not os.path.exists('media'):
+                os.mkdir("media")
+            handle_uploaded_file(request.FILES['file'], file_path)
             # return HttpResponseRedirect(reverse('homepage'))
-            return song(request)
+            results = TuneFinder.main("model.m", file_path)
+            # results = [(0.5, "All Star"), (0.5, "Half Star")]
+            print(results)
+            return song(request, added_context={"song_list": results})
         else:
-            print("invalid form")
+            pass
     else:
         form = UploadFileForm()
     return render(request, 'tunefinder/upload.html', {'form': form})
