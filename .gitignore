@@ -1,4 +1,3 @@
 tunefinder/_pycache_/
 *.pyc
-*.pyc
-*.pyc
+/media/*
