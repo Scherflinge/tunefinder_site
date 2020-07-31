@@ -1,3 +1,4 @@
+import json
 import os
 from django.http import HttpResponseRedirect
 from .upload_file import handle_uploaded_file
@@ -10,6 +11,7 @@ from datetime import datetime
 from django.urls import reverse
 from tunefinder.TuneFinder_PythonCode import TuneFinder
 from django.conf import settings
+from youtube_search import YoutubeSearch
 # Create your views here.
 
 
@@ -49,8 +51,11 @@ def song(request, added_context=None):
     if added_context:
         if added_context[song_list] and len(added_context[song_list]) > 0:
             this_context = added_context[song_list]
-            # print(this_context)
-            this_context = [songInfo(x, y) for (x, y) in this_context]
+
+            this_context = [songInfo(x, y, "https://youtube.com/" +
+                                     json.loads(YoutubeSearch(y, max_results=1).to_json())[
+                                         'videos'][0]['url_suffix'])
+                            for (x, y) in this_context]
             context[song_list] = this_context
         if "song_path" in added_context:
             context["song_path"] = added_context["song_path"]
@@ -58,9 +63,10 @@ def song(request, added_context=None):
 
 
 class songInfo:
-    def __init__(self, percent: float, name: str):
+    def __init__(self, percent: float, name: str, link):
         self.percent = round(percent*100, 1)
         self.name = name
+        self.link = link
 
 
 def upload_file(request):

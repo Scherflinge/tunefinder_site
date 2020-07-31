@@ -13,7 +13,7 @@
     <div class="songclass">
     {% if song_list %}
       {% for song in song_list %}
-      <Li>({{ song.percent }}%): <a href="https://google.com">{{ song.name }}</a></Li>
+      <Li>({{ song.percent }}%): <a href="{{ song.link }}">{{ song.name }}</a></Li>
       {% endfor %}
     {% else %}
       <Li>No Suggestions</Li>
