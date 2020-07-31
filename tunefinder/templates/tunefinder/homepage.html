@@ -14,9 +14,10 @@
 <input type="image" class="image" src="{% static 'tunefinder/images/spanish-listen-music.jpg' %}" alt="Person listening to music" >
 </div>
 <br>
-<form action="homepage.php" method="POST">
-<input type="file" class="text" accept= audio/WAV id="userfile"></input>
-<a href="{% url 'song' %}"><button class="buttonclass" type="button" name="Find that tune" placeholder="Find that tune">Find song</a>
+<form method="POST" enctype="multipart/form-data">
+{{ form }}
+{% csrf_token %} 
+<input class="buttonclass" type="submit" name="Find that tune" placeholder="Find that tune">
 </form>
 </div>
 </div>
